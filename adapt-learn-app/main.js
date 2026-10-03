@@ -139,12 +139,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Tab interactions (simple toggling for demo)
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => {
+  // Tab interactions with image swap and animations
+  const tabs = document.querySelectorAll('.tabs .tab');
+  const tabImage = document.querySelector('.tab-visual img');
+  const tabImages = [
+    '/Desktop - 14 1.png',
+    '/Desktop - 18 1.png',
+    '/Desktop - 20 1.png',
+    '/Desktop - 38 1.png',
+    '/Desktop - 14 1.png'
+  ];
+
+  tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
+      // Manage active state
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+      
+      // Animate image out
+      if (tabImage) {
+        tabImage.style.opacity = 0;
+        tabImage.style.transform = 'translateY(15px) scale(0.98)';
+        
+        // Swap src and animate in after transition
+        setTimeout(() => {
+          tabImage.src = tabImages[index];
+          tabImage.style.opacity = 1;
+          tabImage.style.transform = 'translateY(0) scale(1)';
+        }, 400); // Wait for the 0.4s CSS transition to finish
+      }
     });
   });
 
