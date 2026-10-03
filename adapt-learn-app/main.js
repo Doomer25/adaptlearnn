@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       img: '/Desktop - 18 1.png',
-      heading: 'CHOOSE YOUR PATH',
-      desc: 'Select the learning mode that fits your style.'
+      heading: 'SHAPE YOUR LESSON',
+      desc: 'Choose how content is presented.'
     },
     {
       img: '/Desktop - 20 1.png',
@@ -213,19 +213,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const vTabData = [
     {
-      title: 'What is JavaScript?',
+      title: 'What Is JavaScript?',
       text: 'JavaScript makes web pages interactive and dynamic. It responds to clicks without reloading the page.',
       className: ''
     },
     {
-      title: 'What is JavaScript?',
+      title: 'What Is JavaScript?',
       text: 'JavaScript makes web pages interactive.<br><br>It responds when you click without reloading the page.',
       className: ''
     },
     {
-      title: 'What is JavaScript?',
-      text: 'JavaScript makes web pages interactive it responds to clicks.',
-      className: 'large-text'
+      title: 'What Is JavaScript?',
+      text: 'JavaScript makes web pages interactive and dynamic<br>It responds to clicks without reloading the page.',
+      className: 'large-text',
+      titleClass: 'large-title'
     }
   ];
 
@@ -250,6 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
             vTabText.className = '';
           }
           
+          if (vTabData[index].titleClass) {
+            vTabTitle.classList.add(vTabData[index].titleClass);
+          } else {
+            vTabTitle.className = '';
+          }
+          
           // Animate back in
           vTabCard.style.opacity = 1;
           vTabCard.style.transform = 'translateY(0)';
@@ -257,4 +264,84 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Mastery Practice Stepper & Quiz Logic
+  const stepItems = document.querySelectorAll('.step-item');
+  const quizPreview = document.getElementById('quizPreview');
+  const progressPreview = document.getElementById('progressPreview');
+  const quizOptions = document.querySelectorAll('.quiz-opt');
+  const quizSubmit = document.getElementById('quizSubmit');
+  const quizFeedback = document.getElementById('quizFeedback');
+  const quizNext = document.getElementById('quizNext');
+  let selectedOption = null;
+
+  function updateStepper(index) {
+    stepItems.forEach(s => s.classList.remove('active'));
+    if (stepItems[index]) stepItems[index].classList.add('active');
+    
+    // Toggle views
+    if (index === 3) {
+      if (quizPreview) quizPreview.style.display = 'none';
+      if (progressPreview) progressPreview.style.display = 'block';
+    } else {
+      if (quizPreview) quizPreview.style.display = 'block';
+      if (progressPreview) progressPreview.style.display = 'none';
+    }
+  }
+
+  // Handle Stepper Click manually (optional, but good for previewing)
+  stepItems.forEach((step, index) => {
+    step.addEventListener('click', () => {
+      updateStepper(index);
+    });
+  });
+
+  // Handle Option Click
+  quizOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      // Don't allow changing if already submitted
+      if (quizSubmit.classList.contains('submitted')) return;
+
+      quizOptions.forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      selectedOption = opt;
+      quizSubmit.disabled = false;
+      quizSubmit.style.background = 'var(--primary-color)';
+    });
+  });
+
+  // Handle Submit Answer
+  if (quizSubmit) {
+    quizSubmit.addEventListener('click', () => {
+      if (!selectedOption || quizSubmit.classList.contains('submitted')) return;
+      
+      quizSubmit.classList.add('submitted');
+      quizOptions.forEach(o => o.classList.add('disabled'));
+      
+      const isCorrect = selectedOption.dataset.correct === 'true';
+      
+      if (isCorrect) {
+        selectedOption.classList.remove('selected');
+        selectedOption.classList.add('correct');
+        quizSubmit.classList.add('state-correct');
+        quizSubmit.textContent = 'Correct answer';
+        quizSubmit.style.background = '';
+        updateStepper(1); // Set "Answer" step active
+      } else {
+        selectedOption.classList.remove('selected');
+        selectedOption.classList.add('wrong');
+        quizSubmit.classList.add('state-wrong');
+        quizSubmit.textContent = 'Wrong Answer';
+        quizSubmit.style.background = '';
+        quizFeedback.style.display = 'block';
+        updateStepper(2); // Set "Feedback" step active
+      }
+    });
+  }
+
+  if (quizNext) {
+    quizNext.addEventListener('click', () => {
+       updateStepper(3); // Go to progress step
+    });
+  }
 });
