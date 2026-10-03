@@ -490,6 +490,10 @@ img {
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+#tabHeading, #tabDesc {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 /* Split Layout */
 .split-layout {
   display: flex;
@@ -569,10 +573,11 @@ img {
   border-radius: 1rem;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .preview-header {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-gray);
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
@@ -586,6 +591,12 @@ img {
   color: var(--text-gray);
   margin-bottom: 2rem;
   line-height: 1.8;
+  transition: all 0.3s ease;
+}
+.preview-card p.large-text {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-dark);
 }
 
 .preview-actions {

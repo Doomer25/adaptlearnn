@@ -139,15 +139,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-  // Tab interactions with image swap and animations
+  // Tab interactions with image and text swap
   const tabs = document.querySelectorAll('.tabs .tab');
   const tabImage = document.querySelector('.tab-visual img');
-  const tabImages = [
-    '/Desktop - 14 1.png',
-    '/Desktop - 18 1.png',
-    '/Desktop - 20 1.png',
-    '/Desktop - 38 1.png',
-    '/Desktop - 14 1.png'
+  const tabHeading = document.getElementById('tabHeading');
+  const tabDesc = document.getElementById('tabDesc');
+  
+  const tabData = [
+    {
+      img: '/Desktop - 14 1.png',
+      heading: 'BRING YOUR MATERIAL',
+      desc: 'Upload a document or start with a topic.'
+    },
+    {
+      img: '/Desktop - 18 1.png',
+      heading: 'CHOOSE YOUR PATH',
+      desc: 'Select the learning mode that fits your style.'
+    },
+    {
+      img: '/Desktop - 20 1.png',
+      heading: 'ENGAGE ACTIVELY',
+      desc: 'Dive into your personalized content.'
+    },
+    {
+      img: '/Desktop - 38 1.png',
+      heading: 'PRACTICE MAKES PERFECT',
+      desc: 'Test your understanding with quizzes.'
+    },
+    {
+      img: '/Desktop - 14 1.png', // Reusing image
+      heading: 'TRACK YOUR PROGRESS',
+      desc: 'See how far you have come and what is next.'
+    }
   ];
 
   tabs.forEach((tab, index) => {
@@ -156,26 +179,82 @@ document.addEventListener('DOMContentLoaded', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       
-      // Animate image out
-      if (tabImage) {
+      // Animate content out
+      if (tabImage && tabHeading && tabDesc) {
         tabImage.style.opacity = 0;
         tabImage.style.transform = 'translateY(15px) scale(0.98)';
         
-        // Swap src and animate in after transition
+        tabHeading.style.opacity = 0;
+        tabHeading.style.transform = 'translateY(-10px)';
+        tabDesc.style.opacity = 0;
+        
+        // Swap src and text and animate in after transition
         setTimeout(() => {
-          tabImage.src = tabImages[index];
+          tabImage.src = tabData[index].img;
+          tabHeading.textContent = tabData[index].heading;
+          tabDesc.textContent = tabData[index].desc;
+          
           tabImage.style.opacity = 1;
           tabImage.style.transform = 'translateY(0) scale(1)';
-        }, 400); // Wait for the 0.4s CSS transition to finish
+          
+          tabHeading.style.opacity = 1;
+          tabHeading.style.transform = 'translateY(0)';
+          tabDesc.style.opacity = 1;
+        }, 400); // Wait for the CSS transition
       }
     });
   });
 
+  // Vertical Tabs (See How It Adapts)
   const vTabs = document.querySelectorAll('.v-tab');
-  vTabs.forEach(tab => {
+  const vTabCard = document.getElementById('vTabCard');
+  const vTabTitle = document.getElementById('vTabTitle');
+  const vTabText = document.getElementById('vTabText');
+  
+  const vTabData = [
+    {
+      title: 'What is JavaScript?',
+      text: 'JavaScript makes web pages interactive and dynamic. It responds to clicks without reloading the page.',
+      className: ''
+    },
+    {
+      title: 'What is JavaScript?',
+      text: 'JavaScript makes web pages interactive.<br><br>It responds when you click without reloading the page.',
+      className: ''
+    },
+    {
+      title: 'What is JavaScript?',
+      text: 'JavaScript makes web pages interactive it responds to clicks.',
+      className: 'large-text'
+    }
+  ];
+
+  vTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
       vTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+      
+      if (vTabCard && vTabTitle && vTabText) {
+        // Animate out
+        vTabCard.style.opacity = 0.5;
+        vTabCard.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+          vTabTitle.innerHTML = vTabData[index].title;
+          vTabText.innerHTML = vTabData[index].text;
+          
+          // Apply specific class for Low Vision
+          if (vTabData[index].className) {
+            vTabText.classList.add(vTabData[index].className);
+          } else {
+            vTabText.className = '';
+          }
+          
+          // Animate back in
+          vTabCard.style.opacity = 1;
+          vTabCard.style.transform = 'translateY(0)';
+        }, 300);
+      }
     });
   });
 });
