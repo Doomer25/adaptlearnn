@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdaptLearn - Learning that adapts to you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Wrapper for shared background and curve -->
+    <div class="top-bg-wrapper">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <span class="logo-bold">Adapt</span>Learn
+        </div>
+        <ul class="nav-links">
+          <li><a href="#product">Product</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#adaptive-learning">Adaptive learning</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#login" class="login-btn">Log in</a>
+          <a href="#get-started" class="get-started-btn">Get started</a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <header class="hero">
+      <div class="hero-content">
+        <div class="badge">BUILT AROUND THE LEARNER</div>
+        <h1>Learning that adapts to you.</h1>
+        <p>Turn your study material into a personalized learning experience that adapts to how you understand, practice, and learn.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Start learning <span class="arrow">↗</span></a>
+          <a href="#" class="btn-secondary">Explore the platform <span class="arrow">↗</span></a>
+        </div>
+        <div class="hero-tags">
+          <span>UPLOAD OR CREATE</span>
+          <span>ADAPT</span>
+          <span>LEARN</span>
+          <span>PRACTICE</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Stacked Animation Card Container -->
+        <div class="stacked-cards" id="stackedCards">
+          <img src="/Desktop - 38 1.png" class="stack-card card-4" alt="Card 4" />
+          <img src="/Desktop - 20 1.png" class="stack-card card-3" alt="Card 3" />
+          <img src="/Desktop - 18 1.png" class="stack-card card-2" alt="Card 2" />
+          <img src="/Desktop - 14 1.png" class="stack-card card-1" alt="Card 1" />
+        </div>
+      </header>
+    </div>
+
+    <!-- The Idea Section -->
+    <section class="section bg-light the-idea">
+      <div class="section-header">
+        <span class="section-label">THE IDEA</span>
+        <h2>Everyone learns differently.</h2>
+        <p class="section-subtitle">Traditional learning often presents the same material in the same format to everyone. But the way we process, understand, and engage with information can be different.</p>
+      </div>
+      <div class="idea-cards">
+        <div class="idea-card">
+          <div class="card-number">01</div>
+          <h3>Different ways of processing</h3>
+          <p>Some learners need information broken into smaller, clearer pieces.</p>
+        </div>
+        <div class="idea-card">
+          <div class="card-number">02</div>
+          <h3>Different ways of understanding</h3>
+          <p>The same concept can become easier to understand with simpler explanations and clearer structure.</p>
+        </div>
+        <div class="idea-card">
+          <div class="card-number">03</div>
+          <h3>Different ways of experiencing</h3>
+          <p>Reading, structure, spacing, and visual clarity can change how comfortable learning feels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn Journey Section -->
+    <section class="section learn-journey">
+      <div class="section-header">
+        <span class="section-label">LEARN JOURNEY</span>
+        <h2>From your material to mastery.</h2>
+        <p class="section-subtitle">One connected learning environment, from the first question to the next step forward.</p>
+      </div>
+      <div class="tabs-container">
+        <div class="tabs">
+          <div class="tab active">
+            <span class="tab-num">01</span>
+            <span class="tab-name">UPLOAD</span>
+          </div>
+          <div class="tab">
+            <span class="tab-num">02</span>
+            <span class="tab-name">SELECT MODE</span>
+          </div>
+          <div class="tab">
+            <span class="tab-num">03</span>
+            <span class="tab-name">LEARN</span>
+          </div>
+          <div class="tab">
+            <span class="tab-num">04</span>
+            <span class="tab-name">PRACTICE</span>
+          </div>
+          <div class="tab">
+            <span class="tab-num">05</span>
+            <span class="tab-name">PROGRESS</span>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="tab-text">
+            <h3>BRING YOUR MATERIAL</h3>
+            <p>Upload a document or start with a topic.</p>
+          </div>
+          <div class="tab-visual">
+            <img src="/Desktop - 14 1.png" alt="Platform view" class="floating-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- See How It Adapts -->
+    <section class="section bg-light how-it-adapts">
+      <div class="section-header">
+        <span class="section-label">SEE HOW IT ADAPTS</span>
+        <h2>One idea. Three ways to learn it.</h2>
+        <p class="section-subtitle">Choose a learning style and watch the same lesson change.</p>
+      </div>
+      <div class="split-layout">
+        <div class="vertical-tabs">
+          <div class="v-tab active">
+            <div class="v-tab-num">01</div>
+            <div class="v-tab-text">
+              <h4>Dyslexia Support</h4>
+              <p>Airier text - simpler sentences</p>
+            </div>
+          </div>
+          <div class="v-tab">
+            <div class="v-tab-num">02</div>
+            <div class="v-tab-text">
+              <h4>Cognitive Load Support</h4>
+              <p>One step at a time</p>
+            </div>
+          </div>
+          <div class="v-tab">
+            <div class="v-tab-num">03</div>
+            <div class="v-tab-text">
+              <h4>Low Vision & Clarity</h4>
+              <p>Large type - strong contrast</p>
+            </div>
+          </div>
+          <div class="concept-note">THE CONCEPT STAYS THE SAME. THE EXPERIENCE CHANGES.</div>
+        </div>
+        <div class="tab-preview">
+          <div class="preview-card floating-effect">
+            <div class="preview-header">SECTION 1 / JAVASCRIPT</div>
+            <h3>What is JavaScript?</h3>
+            <p>JavaScript makes web pages interactive and dynamic. It responds to clicks without reloading the page.</p>
+            <div class="preview-actions">
+              <button class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z' /%3E%3C/svg%3E" alt="audio" /> Read aloud</button>
+              <button class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.334.334a1.5 1.5 0 01-1.06.44H9.46a1.5 1.5 0 01-1.06-.44l-.334-.334z' /%3E%3C/svg%3E" alt="explain" /> Explain Simply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adaptive Learning -->
+    <section class="section adaptive-learning">
+      <div class="split-layout align-center">
+        <div class="text-content">
+          <span class="section-label">ADAPTIVE LEARNING</span>
+          <h2>The same lesson.<br/>A better fit for you.</h2>
+          <p class="section-subtitle">Choose a visual adaptation format or describe. Your learning profile shapes how the lesson is presented.</p>
+          
+          <ul class="feature-list">
+            <li>
+              <h4>Dyslexia support</h4>
+              <p>Clearer spacing, shorter sentences</p>
+            </li>
+            <li>
+              <h4>Cognitive load support</h4>
+              <p>One concept at a time</p>
+            </li>
+            <li>
+              <h4>Low vision & clarity</h4>
+              <p>Larger type, stronger contrast</p>
+            </li>
+          </ul>
+        </div>
+        <div class="visual-content">
+          <div class="profile-card floating-effect">
+            <h3>Select Your Profile:</h3>
+            <div class="profile-options">
+              <div class="profile-option active">
+                <div class="option-header">Dyslexia Support<br/><span>Comfortable spacing</span></div>
+                <div class="option-body">
+                  <div class="sec-label">SECTION 1 / JAVASCRIPT</div>
+                  <h5>What is JavaScript?</h5>
+                  <p>JavaScript makes web pages interactive and dynamic. It responds to clicks without reloading the page.</p>
+                  <button class="sm-btn">Read aloud</button>
+                </div>
+              </div>
+              <div class="profile-option">
+                <div class="option-header">Cognitive Load Support<br/><span>One thought at a time</span></div>
+                <div class="option-body">
+                  <div class="sec-label">SECTION 1 / JAVASCRIPT</div>
+                  <h5>What is JavaScript?</h5>
+                  <p>JavaScript makes web pages interactive.<br/><br/>It responds when you click without reloading the page.</p>
+                  <button class="sm-btn">Read aloud</button>
+                </div>
+              </div>
+              <div class="profile-option">
+                <div class="option-header">Low Vision & Clarity<br/><span>Clearer contrast and scale</span></div>
+                <div class="option-body">
+                  <div class="sec-label">SECTION 1 / JAVASCRIPT</div>
+                  <h5>What is JavaScript?</h5>
+                  <p class="large-text">JavaScript makes web pages interactive it responds to clicks.</p>
+                  <button class="sm-btn">Read aloud</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn-primary sm-btn-primary">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="learner-control-banner">
+        <span class="label">LEARNER CONTROL</span>
+        <h3>Accessibility is part of the experience, not an afterthought.</h3>
+      </div>
+    </section>
+
+    <!-- Tools For Understanding -->
+    <section class="section bg-light tools">
+      <div class="section-header">
+        <span class="section-label">TOOLS FOR UNDERSTANDING</span>
+        <h2>More than a summary.</h2>
+        <p class="section-subtitle">Read, revisit, simplify, and connect ideas while you study.</p>
+      </div>
+      <div class="large-card floating-effect">
+        <div class="card-top">
+          <div class="breadcrumb">SECTION 1 OF 3 <span class="badge-blue">FOUNDATIONAL</span> What Is JavaScript?</div>
+          <div class="time-est">Estimated read: 13 sec</div>
+        </div>
+        <div class="card-main">
+          <h2>What Is JavaScript?</h2>
+          <p>JavaScript is a versatile programming language. It powers interactive website elements. HTML defines structure. CSS handles styling. JavaScript adds dynamic behavior. Think of it as the brain of a webpage. It enables actions like responding to clicks. It validates forms. It updates content without reloading the page.</p>
+          <div class="action-buttons">
+            <button class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z' /%3E%3C/svg%3E" alt="audio" /> Read aloud</button>
+            <button class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.334.334a1.5 1.5 0 01-1.06.44H9.46a1.5 1.5 0 01-1.06-.44l-.334-.334z' /%3E%3C/svg%3E" alt="explain" /> Explain simply</button>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <div class="pagination">
+            <button class="nav-btn">Prev</button>
+            <button class="page-num active">1</button>
+            <button class="page-num">2</button>
+            <button class="page-num">3</button>
+            <button class="nav-btn">Next</button>
+          </div>
+          <button class="btn-primary">Mark As Complete ✓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mastery Practice -->
+    <section class="section mastery-practice">
+      <div class="section-header">
+        <span class="section-label">MASTERY PRACTICE</span>
+        <h2>Understanding is only the beginning.</h2>
+        <p class="section-subtitle">Questions drawn from your lesson help you check understanding and keep going.</p>
+      </div>
+      <div class="split-layout">
+        <div class="step-list">
+          <div class="step-item active">
+            <div class="step-num">01</div>
+            <div class="step-text">Question</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-text">Answer</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-text">Feedback</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-text">Progress</div>
+          </div>
+        </div>
+        <div class="quiz-preview floating-effect">
+          <div class="quiz-header">QUESTION 1</div>
+          <p class="quiz-question">What is the main job of JavaScript on a web page?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt"><span class="opt-let">A</span> To style the colors</button>
+            <button class="quiz-opt"><span class="opt-let">B</span> To add interactivity</button>
+            <button class="quiz-opt"><span class="opt-let">C</span> To store the database</button>
+            <button class="quiz-opt"><span class="opt-let">D</span> To design the layout</button>
+          </div>
+          <button class="quiz-submit btn-secondary disabled">Check Answer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+      <div class="cta-card floating-effect">
+        <div class="cta-text">
+          <span class="section-label">MAKE LEARNING YOURS</span>
+          <h2>Your learning shouldn't look like everyone else's.</h2>
+          <p>Start with what you already have. Turn it into a learning experience built around you.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn-primary">Start learning <span class="arrow">↗</span></a>
+            <a href="#" class="btn-secondary">Explore the platform <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-block b1"><span>Bring your material</span></div>
+          <div class="cta-block b2"><span>Choose your profile</span></div>
+          <div class="cta-block b3"><span>Learn and practice</span></div>
+          <div class="cta-block b4"><span>Build mastery</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>AdaptLearn</h3>
+          <p>Learning that adapts to you.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Product</a>
+          <a href="#">How it works</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Log in</a>
+          <a href="#">Get started</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© AdaptLearn</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Go to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
